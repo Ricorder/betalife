@@ -1,0 +1,76 @@
+.page-biocad {
+	video,
+	figure {
+		width: 100%;
+		height: auto;
+		max-width: 100%;
+		border-radius: 15px;
+	}
+
+	.video-player {
+		margin: 20px 0;
+	}
+
+	.biocad-stats {
+		flex-wrap: nowrap;
+		margin: 25px -15px;
+		.box {
+			margin: 0 15px;
+			position: relative;
+			width: calc(100% - 30px);
+			&::after {
+				border: 1px solid #eaeaea;
+				box-sizing: border-box;
+				background: #fafafa;
+				border-radius: 15px;
+				position: absolute;
+				bottom: -10px;
+				height: 30px;
+				content: ' ';
+				z-index: -1;
+				right: 10px;
+				left: 10px;
+			}
+			.inner {
+				display: flex;
+				flex-direction: column;
+				border: 1px solid #f2f2f2;
+				border-radius: 15px;
+				background: #fff;
+				position: relative;
+				min-height: 290px;
+				line-height: 24px;
+				padding: 35px;
+				z-index: 2;
+				&::before {
+					background-repeat: no-repeat;
+					background-size: auto 70px;
+					margin: 0 auto 22px 0;
+					display: block;
+					height: 70px;
+					width: 70px;
+					content: '';
+				}
+			}
+			p {
+				text-align: left;
+			}
+			b {
+				text-transform: uppercase;
+				font-family: 'TT Norms';
+				margin-bottom: 10px;
+				font-weight: 700;
+				font-size: 18px;
+			}
+			&.s1 .inner::before {
+				background-image: url('../../imgs/icons/biocad-ic1.svg');
+			}
+			&.s2 .inner::before {
+				background-image: url('../../imgs/icons/biocad-ic2.svg');
+			}
+			&.s3 .inner::before {
+				background-image: url('../../imgs/icons/biocad-ic3.svg');
+			}
+		}
+	}
+}

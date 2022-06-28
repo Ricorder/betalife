@@ -1,0 +1,119 @@
+.video-player {
+	position: relative;
+	.loader {
+		margin: -20px 0 0 -20px !important;
+		position: absolute;
+		z-index: 1;
+		left: 50%;
+		top: 50%;
+	}
+
+	.player-control {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease;
+		transform: translate(-50%, -50%);
+		box-shadow: 0 0 25px rgba(110, 110, 110, 0.2);
+		background-color: #fff;
+		position: absolute;
+		border-radius: 50%;
+		color: #ff8900;
+		cursor: pointer;
+		font-size: 30px;
+		height: 80px;
+		width: 80px;
+		z-index: 5;
+		opacity: 0;
+		left: 50%;
+		top: 50%;
+
+		&.played {
+			background: #fff;
+			&:hover .player-control {
+				opacity: 1;
+			}
+		}
+		&.pause {
+			opacity: 1;
+		}
+	}
+	&:hover .player-control {
+		opacity: 1;
+	}
+	.player-wrap {
+		position: relative;
+		padding-top: 56.25%;
+	}
+	.player {
+		position: absolute;
+		border-radius: 0;
+		overflow: hidden;
+		height: 100%;
+		width: 100%;
+		z-index: 2;
+		left: 0;
+		top: 0;
+		&::before {
+			background: #16181b;
+			position: absolute;
+			border-radius: 0;
+			opacity: 0.3;
+			height: 100%;
+			width: 100%;
+			content: '';
+			z-index: 1;
+			left: 0;
+			top: 0;
+		}
+		.play {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+			position: absolute;
+			background: #fff;
+			font-weight: 700;
+			color: #ff8900;
+			font-size: 23px;
+			height: 80px;
+			width: 80px;
+			z-index: 3;
+			left: 50%;
+			top: 50%;
+		}
+	}
+
+	&.pause .player .player-control {
+		background: #fff;
+		opacity: 1;
+		i {
+			display: block;
+		}
+	}
+	&.played {
+		.player::before {
+			display: block;
+		}
+		&:hover .player::before {
+			display: none;
+			opacity: 0.7;
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.main-video .video-player .player {
+		border-radius: 8px;
+		&::before {
+			border-radius: 8px;
+		}
+	}
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 568px) {
+}
+@media screen and (max-width: 320px) {
+}

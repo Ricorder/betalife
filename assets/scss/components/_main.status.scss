@@ -1,0 +1,182 @@
+.main-status {
+	margin: 45px 0 0;
+	.pattern {
+		background: url('../../imgs/bg/brain.svg') no-repeat 0 0;
+		position: absolute;
+		height: 810px;
+		left: -190px;
+		width: 895px;
+		z-index: 1;
+		top: 70px;
+	}
+	.down {
+		transform: translate(-50%, 0);
+		background: url('../../imgs/icons/slider-arrow-up.svg') no-repeat 50% 50%;
+		// background-size: 26px 14px;
+		position: absolute;
+		border-radius: 50%;
+		width: 100px;
+		height: 35px;
+		left: 50%;
+		top: -35px;
+	}
+	.status {
+		padding: 45px 0;
+		.column {
+			justify-content: center;
+			z-index: 10;
+			&.desc {
+				width: 460px;
+			}
+			&.list {
+				width: calc(100% - 460px);
+				padding: 0 0 0 70px;
+			}
+		}
+		h2 {
+			padding: 0 0 20px;
+			font-size: 44px;
+			width: 250px;
+		}
+		p {
+			background: url('../../imgs/icons/icn-cur.svg') no-repeat 0 100%;
+			line-height: 24px;
+			font-size: 18px;
+			padding: 0 0 70px;
+		}
+		ul {
+			li {
+				padding: 15px 0;
+				width: calc(50% - 8px);
+				.inner {
+					box-shadow: 0 2px 3px #f1f1f1;
+					border: 1px solid #efefef;
+					border-radius: 15px;
+					position: relative;
+					line-height: 22px;
+					background: #fff;
+					display: block;
+					padding: 10px;
+				}
+				a {
+					border: 2px dashed #dcdcdc;
+					padding: 48px 15px 20px;
+					border-radius: 16px;
+					position: relative;
+					text-align: center;
+					line-height: 22px;
+					font-size: 18px;
+					display: block;
+					&:hover {
+						background-color: #fcf9f6;
+						border-color: $orange;
+					}
+					&::before {
+						transform: translate(-38px, -50%);
+						background-repeat: no-repeat;
+						background-position: 50% 50%;
+						background-size: cover;
+						position: absolute;
+						display: block;
+						height: 76px;
+						width: 76px;
+						content: '';
+						left: 50%;
+						top: 0;
+					}
+					&.ms-suspected::before {
+						background-image: url('../../imgs/icons/status/m-s1-a.svg');
+					}
+					&.diagnosed::before {
+						background-image: url('../../imgs/icons/status/m-s2-a.svg');
+					}
+					&.therapy::before {
+						background-image: url('../../imgs/icons/status/m-s3-a.svg');
+					}
+					&.experience::before {
+						background-image: url('../../imgs/icons/status/m-s4-a.svg');
+					}
+					&.children::before {
+						background-image: url('../../imgs/icons/status/m-s5-a.svg');
+					}
+					&.close-patient::before {
+						background-image: url('../../imgs/icons/status/m-s6-a.svg');
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.main-status {
+		margin: 0;
+		.pattern {
+			top: 0;
+		}
+		.status {
+			padding: 0;
+			h2 {
+				background: url('../../imgs/icons/icn-cur.svg') no-repeat 0 0;
+				padding: 0 0 10px 70px;
+				font-size: 36px;
+				width: 100%;
+			}
+			p {
+				padding: 0 0 0 70px;
+				background: none;
+			}
+			.column.desc {
+				padding: 0 0 20px;
+				width: 100%;
+			}
+			.column.list {
+				width: 100%;
+				padding: 0;
+				ul {
+					margin: 10px 0 -15px;
+					li .inner {
+						height: 100%;
+						a {
+							height: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.main-status {
+		.pattern {
+			width: 100%;
+			left: 0;
+		}
+		.status {
+			h2 {
+				font-size: 32px;
+				min-height: 50px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 568px) {
+	.main-status .status {
+		h2 {
+			padding: 0 0 10px;
+			min-height: auto;
+			font-size: 28px;
+			background: none;
+		}
+		p {
+			font-size: 17px;
+			padding: 0;
+		}
+		ul li a {
+			line-height: 20px;
+			font-size: 17px;
+		}
+	}
+}

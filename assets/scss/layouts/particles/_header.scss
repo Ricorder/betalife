@@ -1,0 +1,168 @@
+.header {
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	background: #fdfdfd;
+	z-index: 10;
+
+	.topbar {
+		border-bottom: 1px solid $grey;
+		padding: 15px 0;
+		.container-inner {
+			align-items: center;
+		}
+		.applinks {
+			align-items: center;
+
+			a.button-app {
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+				background-color: #f3f3f3;
+				border: 1px solid #efefef;
+				margin: auto 10px auto 0;
+				border-radius: 3px;
+				height: 40px;
+				width: 120px;
+				padding: 0;
+				&::before {
+					background-repeat: no-repeat;
+					background-position: 50% 50%;
+					display: block;
+					height: 100%;
+					width: 100%;
+					content: '';
+				}
+				&.googleplay::before {
+					background-image: url('../../../imgs/googleplay.svg');
+				}
+				&.applestore::before {
+					background-image: url('../../../imgs/applestore.svg');
+				}
+				&:hover {
+					border-color: #ff6b00;
+					background-color: #ff6b00;
+					&::before {
+						filter: grayscale(1) invert(1);
+					}
+				}
+			}
+			a.link {
+				font-feature-settings: 'liga' off;
+				margin-left: 10px;
+				font-weight: 400;
+				font-size: 15px;
+				cursor: pointer;
+			}
+		}
+		.buttons {
+			margin: 0 0 0 auto;
+			a.button {
+				border-radius: 3px;
+				line-height: 28px;
+				font-weight: 500;
+				padding: 0 12px;
+				font-size: 13px;
+				height: 30px;
+			}
+		}
+	}
+
+	.middle {
+		border-bottom: 1px solid $grey;
+		padding: 32px 0;
+		.container-inner {
+			align-items: center;
+		}
+		a.logo {
+			background: url('../../../imgs/logo.svg') no-repeat 0 50% / cover;
+			height: 45px;
+			width: 165px;
+			z-index: 8;
+		}
+
+		.menu {
+			margin: 0 auto;
+			ul {
+				margin: 0 -25px;
+			}
+			li {
+				padding: 0 25px;
+				a {
+					text-transform: uppercase;
+					line-height: 30px;
+					font-weight: 700;
+					font-size: 15px;
+					color: $black;
+					&:hover,
+					&.active {
+						color: $main;
+					}
+				}
+			}
+		}
+
+		.drwnav {
+			.button {
+				border: 0;
+				display: flex;
+				position: relative;
+				align-items: center;
+				flex-direction: column;
+				justify-content: center;
+				background: linear-gradient(270deg, #ff8900 0%, #ff6b00 100%);
+				box-shadow: 0px 3px 5px rgba(255, 107, 0, 0.3);
+				border-radius: 4px;
+				margin: 0 0 0 10px;
+				height: 32px;
+				width: 32px;
+				padding: 0;
+				&::before {
+					background-repeat: no-repeat;
+					background-position: 50% 50%;
+					display: block;
+					height: 100%;
+					width: 100%;
+					content: '';
+				}
+				&.toggle-nav::before {
+					background-image: url('../../../imgs/icons/nav.svg');
+				}
+				&.toggle-search::before {
+					background-image: url('../../../imgs/icons/search-w.svg');
+					background-size: 14px 14px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.header {
+		.topbar .buttons {
+			display: none;
+		}
+		.middle {
+			padding: 15px 0;
+			.menu {
+				display: none;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.header .topbar .applinks {
+		justify-content: flex-start;
+		flex-direction: row;
+		span {
+			padding: 15px 0 0;
+			width: 100%;
+			margin: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 568px) {
+	.header .topbar {
+		display: none;
+	}
+}

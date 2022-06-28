@@ -1,0 +1,5 @@
+export { default as ErrorLayout } from './error'
+export { default as MainLayout } from './main'
+export { default as PageLayout } from './page'
+export { default as PostLayout } from './post'
+export { default as TaxonomyLayout } from './category'

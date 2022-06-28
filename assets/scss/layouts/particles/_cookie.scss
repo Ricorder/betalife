@@ -1,0 +1,77 @@
+.cookie {
+	box-shadow: 0 0 0 4px rgb(25 25 25 / 10%);
+	background: #2e2e2e;
+	border-radius: 7px;
+	transform: none;
+	position: fixed;
+	display: block;
+	padding: 15px;
+	z-index: 1100;
+	width: 566px;
+	color: $white;
+	left: auto;
+	right: 15px;
+	bottom: 15px !important;
+	.close {
+		background: url('../../../imgs/icons/close.svg') no-repeat 50% 50%;
+		transition: all 0.3s ease;
+		position: absolute;
+		cursor: pointer;
+		opacity: 0.5;
+		height: 20px;
+		width: 20px;
+		right: 5px;
+		border: 0;
+		top: 5px;
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	.cookie_text {
+		background: url('../../../imgs/icons/cookie.svg') no-repeat 0 3px;
+		background-size: 30px;
+		padding: 0 0 0 45px;
+		line-height: 18px;
+		font-size: 12px;
+	}
+
+	a {
+		display: inline-block;
+		text-decoration: underline;
+		color: $white;
+		&:hover {
+			color: $main;
+			text-decoration: none;
+		}
+	}
+
+	.button {
+		margin: 20px 0 0 45px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.cookie {
+		box-shadow: none;
+		border-radius: 0;
+		padding: 15px;
+		width: 100%;
+		bottom: 0 !important;
+		right: 0;
+		left: 0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.cookie {
+		.cookie_text br {
+			padding: 0 30px 20px 0;
+			display: none;
+		}
+		.button {
+			font-size: 12px;
+			padding: 0 10px;
+		}
+	}
+}

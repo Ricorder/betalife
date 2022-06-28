@@ -1,0 +1,366 @@
+.layout-taxonomy {
+	.page-head {
+		background-image: url('../../imgs/bg/lecture.svg');
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+		height: 500px;
+		.container-inner {
+			align-items: center;
+			position: relative;
+			height: 500px;
+			z-index: 2;
+
+			h1 {
+				text-transform: none;
+				line-height: 34px;
+				margin: 0 0 15px;
+				font-size: 32px;
+			}
+			.desc {
+				vertical-align: middle;
+				display: table-cell;
+				line-height: 24px;
+				max-width: 650px;
+				text-align: left;
+				font-size: 18px;
+				p {
+					text-align: left;
+					padding: 10px 0;
+				}
+			}
+
+			&::before {
+				background-image: url('../../imgs/categories/encyclopedia.png');
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+				transform: translate(0, -50%);
+				background-size: cover;
+				position: absolute;
+				display: block;
+				height: 500px;
+				width: 500px;
+				content: '';
+				right: 15px;
+				z-index: 2;
+				top: 50%;
+			}
+		}
+		&.head-status-tax {
+			padding: 50px 0 110px;
+			margin: -50px auto 0;
+			height: auto;
+			.desc {
+				max-width: 650px;
+				h2 {
+					line-height: 34px;
+					font-size: 32px;
+				}
+				p {
+					line-height: 24px;
+					padding: 20px 0;
+				}
+			}
+			.tag {
+				font-weight: 500;
+				font-size: 14px;
+				span {
+					color: #ff8900;
+				}
+			}
+		}
+	}
+
+	// .note {
+	// 	.cb-inner {
+	// 		display: flex;
+	// 		flex-wrap: wrap;
+	// 		flex-direction: row;
+	// 		justify-content: space-between;
+	// 	}
+	// 	.cb-title {
+	// 		margin: auto 0;
+	// 		text-align: center;
+	// 		flex-direction: column;
+	// 		padding: 0 30px 0 0;
+	// 		width: 200px;
+	// 		.cb-icon {
+	// 			margin: 0 auto 25px;
+	// 		}
+	// 		h2 {
+	// 			text-align: center;
+	// 			line-height: 16px;
+	// 			font-weight: 700;
+	// 			font-size: 14px;
+	// 			width: 100%;
+	// 		}
+	// 	}
+	// 	.cb-body {
+	// 		border-left: 2px dashed #e5e5e5;
+	// 		width: calc(100% - 200px);
+	// 		padding: 0 0 0 40px;
+	// 	}
+	// }
+
+	.category-posts-list {
+		.childrens {
+			padding: 10px 0 0;
+			width: 58%;
+			li {
+				transition: all 0.3s ease;
+				padding: 3px 0;
+				a {
+					align-items: center;
+					position: relative;
+					line-height: 1.3;
+					font-size: 17px;
+					padding: 8px 0;
+					display: flex;
+					&::before {
+						background: #fff url('../../imgs/icons/list-li.svg') no-repeat 0 0;
+						margin: auto 20px auto 0;
+						display: block;
+						height: 20px;
+						content: '';
+						width: 30px;
+					}
+				}
+				&.active a::before {
+					background-image: url('../../imgs/icons/list-li-a.svg');
+					font-weight: 500;
+				}
+			}
+		}
+		.preview {
+			padding: 0 0 0 30px;
+			width: 42%;
+			.cb-title {
+				align-items: unset;
+				flex-direction: column;
+				margin: 0 0 25px;
+				padding: 0;
+				.cb-icon {
+					position: relative;
+					margin: 0 0 10px;
+					transform: none;
+					top: auto;
+					&::before {
+						background-image: url('../../imgs/icons/article.svg');
+					}
+				}
+				h2 {
+					font-size: 21px;
+					line-height: 26px;
+					padding: 0 0 18px;
+					text-transform: none;
+					&::before {
+						background: #ec7e3b;
+						position: absolute;
+						display: block;
+						content: '';
+						width: 20px;
+						height: 1px;
+						bottom: 0;
+						left: 0;
+					}
+				}
+			}
+
+			.cb-body {
+				font-size: 17px;
+				p {
+					padding: 10px 0;
+				}
+			}
+			.button {
+				margin: 25px 0 0;
+			}
+		}
+	}
+
+	.category-posts-preview {
+		.content {
+			width: 70%;
+		}
+		.side {
+			padding: 0 0 0 30px;
+			width: 30%;
+			.cbox .cb-title {
+				flex-direction: column;
+				.cb-icon {
+					margin: 0 auto 10px;
+				}
+				h2 {
+					text-align: center;
+					width: 170px;
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.category-news .page-head .container-inner::before {
+		background-image: url('../../imgs/categories/news.png');
+}
+
+.category-ensiklopedija .page-head .container-inner::before {
+		background-image: url('../../imgs/categories/encyclopedia.png');	
+}
+
+.category-therapy .page-head .container-inner::before {
+		background-image: url('../../imgs/categories/therapy.png');	
+}
+
+.category-lifestyle .page-head .container-inner::before {
+		background-image: url('../../imgs/categories/lifestyle.png');	
+}
+
+.category-vosproizvedennye-pitrs .page-head .container-inner::before {
+		background-image: url('../../imgs/categories/pitrs.svg');
+}
+
+.term-lectures .page-head .container-inner::before {
+		background-image: url('../../imgs/categories/school.png');	
+}
+
+@media screen and (max-width: 1200px) {
+	.layout-taxonomy .page-head .container-inner .desc {
+		max-width: 500px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.layout-taxonomy {
+		.page-head {
+			height: auto;
+			.container-inner {
+				height: auto;
+				&::before {
+					position: relative;
+					transform: unset;
+					margin: 0 auto 20px;
+					height: 420px;
+					right: unset;
+					top: unset;
+				}
+				.desc {
+					max-width: 100%;
+				}
+			}
+
+			&.head-status-tax {
+				padding: 40px 0;
+			}
+		}
+
+		.category-posts-list {
+			.childrens {
+				padding: 0 0 30px;
+				width: 100%;
+			}
+			.preview {
+				padding: 0;
+				width: 100%;
+			}
+		}
+
+		&.category-lifestyle .page-head .container-inner::before {
+			height: 460px;
+		}
+
+		.category-posts-preview {
+			.content {
+				width: 100%;
+			}
+			.side {
+				justify-content: space-between;
+				flex-wrap: wrap;
+				display: flex;
+				padding: 0;
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.layout-taxonomy {
+		.page-head {
+			.container-inner h1 {
+				margin: 0 0 10px;
+			}
+			&.head-status-tax {
+				padding: 40px 0 30px;
+			}
+		}
+		.category-posts-list .childrens li a {
+			padding: 7px 0;
+			&::before {
+				display: none;
+			}
+		}
+
+		.category-posts-preview .side .cbox .cb-title {
+			align-items: flex-start;
+			.cb-icon {
+				margin: 0 0 10px;
+			}
+			h2 {
+				text-align: left;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 568px) {
+	.layout-taxonomy {
+		.page-head .container-inner {
+			&::before {
+				background-size: contain;
+				height: 300px;
+			}
+			.desc {
+				line-height: 20px;
+				font-size: 16px;
+			}
+		}
+		.category-posts-list {
+			.preview {
+				.cb-body {
+					line-height: 20px;
+					font-size: 16px;
+				}
+				.cb-title {
+					margin: 0 0 20px;
+					h2 {
+						width: 100%;
+					}
+				}
+			}
+			.childrens {
+				padding: 0 0 20px;
+				li {
+					a {
+						font-size: 16px;
+					}
+					&:first-child {
+						padding: 0 0 3px;
+						a {
+							padding: 0 0 7px;
+						}
+					}
+					&:last-child {
+						padding: 3px 0 0;
+						a {
+							padding: 7px 0 0;
+						}
+					}
+				}
+			}
+		}
+
+		&.category-lifestyle .page-head .container-inner::before {
+			height: 300px;
+		}
+	}
+}

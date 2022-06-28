@@ -1,0 +1,28 @@
+---
+include: https://ci.biocad.ru/4/main.yml
+
+stages:
+  - build
+  - deploy
+
+'Build':
+  extends: .image.Build
+  #when: manual
+  variables:
+    CI: ''
+    API: 'https://api.biocadless.com'
+    CLIENT_ID: ${CLIENT_ID}
+    CLIENT_SECRET: ${CLIENT_SECRET}
+    BIOCADLESS_YOUTUBE_API: ${BIOCADLESS_YOUTUBE_API}
+    BIOCADLESS_GOOGLE_MAP_API: ${BIOCADLESS_GOOGLE_MAP_API}
+
+
+'Deploy':
+  extends: .k8s.Kubectl
+  tags: ['prod']
+  environment: dcm-betalife-prod
+  only:
+    - master
+  variables:
+    K8S_MANIFEST: k8s.yml
+  # when: manual

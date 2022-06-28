@@ -1,0 +1,141 @@
+@import '../base/colors';
+
+html {
+	--antd-wave-shadow-color: $main;
+}
+
+// checkbox
+.ant-checkbox {
+	font-variant: normal;
+	color: #777;
+	margin: 0;
+	top: 5px;
+	&:hover {
+		background: transparent;
+		border-color: #ec7e3b;
+	}
+}
+.ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-checkbox:hover .ant-checkbox-inner,
+.ant-checkbox-input:focus + .ant-checkbox-inner,
+.ant-checkbox-checked .ant-checkbox-inner {
+	border-color: #ec7e3b;
+	box-shadow: none;
+}
+.ant-checkbox-wrapper {
+	line-height: 1.2;
+	font-size: 16px;
+	&.error .ant-checkbox-inner {
+		border-color: #fa6369;
+	}
+	.ant-checkbox + span {
+		padding: 0 0 0 10px;
+		line-height: 19px;
+		a {
+			display: initial;
+			color: #ec7e3b;
+		}
+	}
+}
+.ant-checkbox-inner {
+	border: 1px solid #eaeaea;
+	background: #fff;
+	border-radius: 3px;
+	overflow: visible;
+	height: 20px;
+	width: 20px;
+}
+.ant-checkbox-checked {
+	&::after {
+		display: none;
+	}
+	.ant-checkbox-inner {
+		background: #ec7e3b;
+	}
+}
+
+// Notice
+.ant-notification-notice {
+	border-radius: 3px;
+	font-variant: normal;
+	padding: 15px;
+	line-height: 1;
+	.ant-notification-notice-close {
+		color: #fff;
+		right: 10px;
+		top: 10px;
+	}
+	.anticon {
+		color: #fff;
+	}
+	.ant-notification-notice-message {
+		line-height: 1.2;
+		font-size: 16px;
+		color: #fff;
+	}
+	&.error {
+		background: #fa6369;
+	}
+	&.success {
+		background: #20b684;
+	}
+}
+
+// Modal
+
+.ant-modal {
+	padding: 0;
+	&.form {
+		width: 900px !important;
+		.ant-modal-content {
+			border-radius: 15px;
+			padding: 10px;
+		}
+		.ant-modal-close {
+			right: 25px;
+			top: 25px;
+			.ant-modal-close-x {
+				line-height: 40px;
+				height: 40px;
+				width: 40px;
+				&:hover .anticon svg {
+					fill: $main;
+				}
+			}
+			.anticon svg {
+				fill: #000;
+				height: 30px;
+				width: 30px;
+			}
+		}
+		.ant-modal-body {
+			border: 2px dashed #ec7e3b;
+			border-radius: 10px;
+			padding: 15px;
+		}
+	}
+}
+
+.ant-select-selection-placeholder {
+	color: #959595;
+}
+.ant-select-focused .ant-select-selector {
+	box-shadow: 0 0 0 2px rgba(236, 126, 59, 0.2) !important;
+	border-color: #ec7e3b !important;
+}
+
+// Colapse
+
+.ant-collapse {
+	.ant-collapse-item-active .wb-title::before {
+		transition: all 0.3s ease;
+		transform: rotate(180deg);
+	}
+
+	.ant-collapse-header {
+		padding: 0 !important;
+	}
+	.ant-collapse-content-box {
+		padding: 0 !important;
+	}
+}

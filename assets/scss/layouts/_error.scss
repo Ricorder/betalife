@@ -1,0 +1,108 @@
+.error-layout {
+	background: url('../../imgs/bg/brain.png') no-repeat 10% 20px;
+	height: 100vh;
+	overflow: hidden;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	display: flex;
+
+	.error-content {
+		height: fit-content;
+		position: relative;
+		padding: 0 0 14px;
+		min-width: 100%;
+		.card-text {
+			font-size: 54px;
+			line-height: 1;
+		}
+		span {
+			padding: 10px 0 70px;
+			text-align: center;
+			line-height: 30px;
+			font-size: 22px;
+		}
+		.button {
+			margin: 0 auto;
+		}
+	}
+
+	.cb-inner {
+		flex-direction: column;
+		min-width: 1070px;
+		display: flex;
+	}
+	a.logo {
+		transform: translate(0, -50%);
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-size: contain;
+		text-indent: -9999px;
+		position: absolute;
+		overflow: hidden;
+		display: block;
+		height: 26px;
+		width: 240px;
+		z-index: 100;
+		left: 0;
+		top: 0;
+	}
+	h1 {
+		filter: drop-shadow(0 0 55px rgba(0, 0, 0, 0.03));
+		background: -webkit-linear-gradient(#f9bd32, #e77e3a);
+		-webkit-text-fill-color: transparent;
+		-webkit-text-stroke: 10px #fff;
+		-webkit-background-clip: text;
+		justify-content: center;
+		font-size: 300px;
+		display: flex;
+		width: 100%;
+	}
+	h2 {
+		text-transform: none;
+		line-height: 80px;
+		font-weight: 700;
+		font-size: 60px;
+	}
+	p {
+		padding: 10px 0 50px;
+		text-align: center;
+		line-height: 30px;
+		font-size: 22px;
+	}
+	.button {
+		border-radius: 55px;
+		line-height: 54px;
+		height: 56px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.error-layout .page-error {
+		h1 {
+			font-size: 200px;
+		}
+		h2 {
+			font-size: 40px;
+		}
+		p {
+			padding: 0 0 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 568px) {
+	.error-layout .page-error {
+		h1 {
+			font-size: 150px;
+		}
+		h2 {
+			font-size: 26px;
+		}
+		p {
+			font-size: 18px;
+		}
+	}
+}

@@ -1,0 +1,9 @@
+@import './particles/index';
+
+.main-layout {
+	background: url('../../imgs/bg/brain-bottom.png') no-repeat 20% 100%;
+	justify-content: space-between;
+	flex-direction: column;
+	min-height: 100vh;
+	display: flex;
+}

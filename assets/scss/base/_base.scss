@@ -1,0 +1,268 @@
+/* Base */
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+	scrollbar-color: $main rgba(255, 255, 255, 0.2);
+	scrollbar-width: thin;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-track {
+	visibility: hidden;
+	display: none;
+}
+::-webkit-scrollbar-thumb {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+	transition: all 0.3s ease;
+	background: $main;
+	&:hover {
+		background: $main;
+	}
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	transition: all 0.3s ease;
+	background: rgba(0, 0, 0, 0.4);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+body {
+	font-family: 'TT Norms';
+	font-family: 'Roboto', sans-serif;
+	font-variant: normal !important;
+	background: #f8f8f8;
+	position: relative;
+	line-height: 22px;
+	font-weight: 400;
+	color: #171716;
+	min-width: 320px;
+	font-size: 16px;
+}
+a,
+a:visited {
+	transition: all 0.3s ease;
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+	color: $black_l;
+}
+a:focus {
+	outline: none;
+}
+a:hover,
+a.active {
+	text-decoration: none;
+	color: #ec7e3b;
+}
+p {
+	padding: 10px 0;
+	margin: 0;
+}
+u {
+	text-decoration: underline;
+	&:hover {
+		text-decoration: none;
+	}
+}
+b,
+strong {
+	font-weight: 700;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+}
+label {
+	font-weight: 400;
+	cursor: pointer;
+	display: block;
+}
+span {
+	display: inline-block;
+}
+pre {
+	width: 100%;
+	max-width: 100%;
+	max-height: 300px;
+	word-break: break-all;
+	overflow-x: hidden;
+	margin: 20px 0;
+}
+
+a,
+img,
+input,
+textarea,
+.button {
+	transition: all 0.3s ease;
+	font-family: 'Roboto', sans-serif;
+	color: $black_l;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title {
+	font-family: 'TT Norms', 'Roboto', sans-serif;
+	font-variant: normal !important;
+	letter-spacing: 0.2px;
+	font-weight: normal;
+	position: relative;
+	font-weight: 700;
+	line-height: 1.1;
+	color: $black;
+	padding: 0;
+	margin: 0;
+}
+h2 {
+	line-height: 1.2;
+	font-size: 21px;
+}
+
+// h1 {
+// 	font-size: 40px;
+// }
+// h2 {
+// 	font-size: 24px;
+// 	span {
+// 		display: block;
+// 	}
+// }
+// h3 {
+// 	font-size: 18px;
+// }
+// h4 {
+// 	font-size: 15px;
+// }
+
+img,
+iframe {
+	width: 100%;
+}
+
+ul,
+ol,
+li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+input,
+select,
+textarea {
+	font-family: 'Roboto', sans-serif;
+	background-position: 15px 50%;
+	background-repeat: no-repeat;
+	border: 1px solid #eaeaea;
+	background-color: #fcfcfc;
+	transition: all 0.2s ease;
+	box-sizing: border-box;
+	position: relative;
+	border-radius: 3px;
+	padding: 14px 25px;
+	line-height: 20px;
+	box-shadow: none;
+	color: #959595;
+	font-size: 15px;
+	resize: none;
+	height: 50px;
+	width: 100%;
+	margin: 0;
+
+	&:focus,
+	&:hover {
+		box-shadow: 0 0 0 3px rgba(133, 135, 140, 0.2);
+		border-color: #a2a2a2;
+		color: $black_l;
+	}
+	&::placeholder {
+		text-align: left;
+		color: $black;
+		opacity: 0.5;
+	}
+	&.error {
+		box-shadow: 0 0 0 3px rgb(240 38 38 / 15%);
+		border-color: #fa6369;
+	}
+	&.icon,
+	&.inp-icon {
+		padding-left: 60px;
+	}
+	&.name,
+	&.user {
+		background-image: url('../../imgs/icons/inp-user.svg');
+	}
+	&.email {
+		background-image: url('../../imgs/icons/inp-email.svg');
+	}
+	&.subject {
+		background-image: url('../../imgs/icons/inp-subject.svg');
+	}
+	&.msg {
+		height: 200px;
+	}
+}
+textarea {
+	background-position: 12px 12px;
+	padding: 15px 20px;
+	min-height: 130px;
+	resize: resize;
+	z-index: 4;
+}
+
+hr,
+.divider {
+	border: 0;
+	height: 0;
+	width: 100%;
+	display: block;
+	margin: 20px 0;
+	max-width: 1170px;
+	border-top: 1px solid $grey;
+}
+
+:focus,
+:active {
+	outline: 0;
+}
+
+::-webkit-selection {
+	background: $main;
+	text-shadow: none;
+	color: $white;
+}
+::-moz-selection {
+	background: $main;
+	text-shadow: none;
+	color: $white;
+}
+::selection {
+	background: $main;
+	text-shadow: none;
+	color: $white;
+}
+
+/* 
+ * Responsive
+ * ---------------------------------------- 
+ */
+
+// @media screen and (max-width: 1280px) {}
+// @media screen and (max-width: 1024px) {}
+// @media screen and (max-width: 768px) {}
+// @media screen and (max-width: 568px) {}
+// @media screen and (max-width: 320px) {}

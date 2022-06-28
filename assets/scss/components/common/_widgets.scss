@@ -1,0 +1,65 @@
+.widget {
+	/** Widget Testing */
+	&.testing {
+		text-align: center;
+		h4 {
+			margin-bottom: 20px;
+			text-align: center;
+			line-height: 22px;
+			font-weight: 400;
+			font-size: 18px;
+		}
+		.result {
+			padding: 40px 0 50px;
+			line-height: 24px;
+			color: #2fab05;
+			font-size: 18px;
+			display: block;
+		}
+		.ant-radio-group,
+		.ant-radio-wrapper {
+			display: block;
+		}
+		.ant-radio-wrapper {
+			margin: 0 auto 10px;
+			max-width: 200px;
+			text-align: left;
+		}
+	}
+
+	/** Widget Subscrible */
+	&.subsc {
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.widget {
+		&.subsc,
+		&.testing {
+			width: calc(50% - 15px);
+			height: fit-content;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.widget {
+		&.subsc {
+			width: 100%;
+		}
+		&.testing {
+			margin: 0 0 20px;
+			width: 100%;
+			h4 {
+				text-align: left;
+			}
+			.ant-radio-wrapper {
+				margin: 0 0 10px;
+			}
+			.result {
+				padding: 30px 0 0;
+				text-align: left;
+			}
+		}
+	}
+}

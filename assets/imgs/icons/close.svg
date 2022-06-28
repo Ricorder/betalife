@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#fff" xmlns:v="https://vecta.io/nano">
+  <path d="M1.167 12L0 10.8l5.833-6L7 6l-5.833 6z" />
+  <path d="M7 6L5.833 7.2 0 1.2 1.167 0 7 6z" />
+  <path d="M10.833 12L12 10.8l-5.833-6L5 6l5.833 6z" />
+  <path d="M5 6l1.167 1.2L12 1.2 10.833 0 5 6z" />
+</svg>

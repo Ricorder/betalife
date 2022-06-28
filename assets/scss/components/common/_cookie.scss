@@ -1,0 +1,127 @@
+.cookie {
+	box-shadow: 0 0 0 4px rgba(25, 25, 25, 0.1);
+	// border: 1px solid #d5d5d5;
+	background: #2e2e2e;
+	border-radius: 5px;
+	position: fixed;
+	display: block;
+	padding: 15px;
+	z-index: 1100;
+	color: #fff;
+	width: 566px;
+	bottom: 15px;
+	right: 15px;
+	left: auto;
+
+	.close {
+		background: transparent url('../../../imgs/icons/close.svg') no-repeat 50% 50%;
+		background-size: 14px 14px;
+		text-indent: -999em;
+		position: absolute;
+		overflow: hidden;
+		cursor: pointer;
+		z-index: 1000;
+		height: 22px;
+		width: 22px;
+		right: 5px;
+		border: 0;
+		top: 5px;
+	}
+	.cookie-inner {
+		background: url('../../../imgs/icons/cookie.svg') no-repeat 0 5px;
+		padding: 5px 135px 5px 48px;
+		background-size: 32px 32px;
+		position: relative;
+	}
+
+	.cookie-text {
+		line-height: 18px;
+		font-size: 13px;
+		padding: 0;
+		p {
+			text-align: left;
+			padding: 5px;
+		}
+		a {
+			display: inline-block;
+			text-decoration: underline;
+			color: #3f1b3f;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	.cookie-accept {
+		border-color: $black_l;
+		border-radius: 3px;
+		background: $white;
+		line-height: 36px;
+		box-shadow: none;
+		padding: 0 15px;
+		font-size: 13px;
+		color: $black;
+		height: 36px;
+		&:hover,
+		&:active {
+			background: $main;
+			color: $white;
+		}
+	}
+	&.full-width {
+		box-shadow: 0 0 35px rgba(15, 37, 85, 0.05);
+		border-width: 1px 0 0 0;
+		border-radius: 0;
+		width: 100%;
+		margin: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.cookie {
+		&::after {
+			display: none;
+		}
+		.cookie-inner {
+			padding-right: 0;
+		}
+		.cookie-text {
+			padding: 0;
+		}
+		.button-cookie {
+			margin: 0 0 0 auto;
+			position: relative;
+			float: right;
+			bottom: auto;
+			right: auto;
+			top: auto;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.cookie {
+		border-radius: 0;
+		box-shadow: none;
+		padding: 15px;
+		width: 100%;
+		margin: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		.cookie-text {
+			padding: 0 0 15px;
+		}
+	}
+}
+@media screen and (max-width: 568px) {
+	.cookie {
+		padding: 10px;
+		.button-cookie {
+			margin: 6px 0 0 48px;
+			float: none;
+		}
+	}
+}

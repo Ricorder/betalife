@@ -1,0 +1,44 @@
+.countdown {
+	gap: 15px;
+	display: flex;
+	line-height: 1;
+	align-items: center;
+	flex-direction: column;
+	&.inline {
+		flex-direction: row;
+	}
+	.cd-timer {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		flex-direction: row;
+		.sd-num {
+			gap: 6px;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			b {
+				text-shadow: 0 -1px 1px #3d3d3d;
+				border: 1px solid transparent;
+				padding: 5px 4px 5px 8px;
+				letter-spacing: 4px;
+				border-radius: 4px;
+				background: #fff;
+				line-height: 30px;
+				font-size: 24px;
+			}
+			p {
+				color: #9c9c9c;
+				font-weight: 400;
+				font-size: 13px;
+				padding: 0;
+			}
+		}
+		.cd-sep {
+			line-height: 38px;
+			font-weight: 700;
+			font-size: 21px;
+			margin: 0 5px auto;
+		}
+	}
+}

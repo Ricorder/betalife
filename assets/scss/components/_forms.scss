@@ -1,0 +1,163 @@
+.formbox {
+	position: relative;
+	.row-control {
+		width: 100%;
+		position: relative;
+		margin-bottom: 20px;
+		input, textarea {
+			padding: 14px 30px 14px 60px;
+		}
+		textarea {
+			padding-left:20px;
+		}
+
+		&::before, &::after {
+			transition: all 0.25s ease;
+			position: absolute;
+			display: none;
+			content: '';
+			z-index: 10;
+			opacity: 1;
+		}
+		&::before {
+			transform: translate(0, -50%);
+			background: #eaeaea;
+			display: block;
+			height: 26px;
+			width: 1px;
+			left: 43px;
+			top: 50%;
+		}
+		&::after {
+			text-align: center;
+			line-height: 26px;
+			overflow: hidden;
+			font-weight: 600;
+			color: #ff8900;
+			display: inline;
+			content: '*';
+			height: 20px;
+			width: 20px;			
+			right: 5px;
+			top: 15px;
+		}
+
+		&.req {
+			&::after {
+				display: block;
+			}
+			&:focus-within::after {
+				opacity: 0;
+			}
+		}
+	}
+
+	.row-group {
+		gap: 30px;
+		display: flex;
+		flex-wrap: nowrap;
+	}
+
+	.acceptance {
+		.row-control {
+			display: flex;
+			margin: 10px 0;
+			position: relative;
+			&::before,
+			&::after {
+				display: none !important;
+			}
+			a {
+				display: inline;
+				color: #ff6b00;
+				text-decoration: underline;
+				&:hover {
+					text-decoration: none;
+					color: #210303;
+				}
+			}
+			sup {
+				margin: 0 0 0 5px;
+				font-weight: 600;
+				color: #ff6b00;
+				font-size: 15px;
+				display: inline;
+				top: auto;
+			}
+			.ant-checkbox-wrapper {
+				line-height: 20px;
+				.ant-checkbox {
+					display: inherit;
+				}
+			}
+			.ant-checkbox-wrapper .ant-checkbox + span {
+				padding: 0 0 0 10px;
+				line-height: 18px;
+				font-size: 14px;
+				color: #777;
+			}
+		}
+	}
+	.row-buttons {
+		padding: 20px 0 0;
+		.button {
+			width: 160px;
+		}
+		.messages {
+			width: calc(100% - 180px);
+			.ant-alert {
+				padding: 11px 15px;
+			}
+		}
+	}
+
+	.row-msg::before {
+		display: none;		
+	}
+
+	/** Subscribles */
+	&.subsc {
+		.title {
+			padding: 0 0 10px;
+			font-size: 27px;
+		}
+		p {
+			line-height: 1.1;
+		}
+		.form-control {
+			padding: 10px 0;
+		}
+
+		.row-buttons {
+			padding: 10px 0 0;
+			flex-direction: column;
+			.button,
+			.messages {
+				display: block;
+				margin: 7px 0;
+				width: 100%;
+			}
+		}
+	}
+
+	/** Write To Us */
+	&.writetous {
+		width: 740px;
+		margin: 0 auto;
+		.title {
+			padding: 55px 0 0;
+			text-align: center;
+			font-size: 42px;
+		}
+		p {
+			padding: 25px 0 40px;
+			text-align: center;
+			font-size: 16px;
+			margin: 0 auto;
+			width: 560px;
+		}
+		.row-buttons {
+			padding: 20px 0 30px;
+		}
+	}
+}

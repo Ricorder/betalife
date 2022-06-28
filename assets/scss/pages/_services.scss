@@ -1,0 +1,280 @@
+.page-services {
+	.block {
+		border: 1px solid #f2f2f2;
+		width: calc(100% - 10px);
+		margin: 5px 5px 45px;
+		border-radius: 15px;
+		position: relative;
+		background: #fff;
+		padding: 35px;
+		.title {
+			margin-bottom: 20px;
+			line-height: 22px;
+			font-weight: 700;
+			font-size: 18px;
+		}
+	}
+
+	.row {
+		.column {
+			&.left {
+				padding: 0 30px 0 0;
+				width: 70%;
+			}
+			&.right {
+				width: 30%;
+			}
+		}
+
+		.r2c {
+			.block {
+				width: 50%;
+			}
+		}
+	}
+
+	.library {
+		.block {
+			width: calc(50% - 20px);
+		}
+		.about {
+			display: flex;
+			flex-direction: column;
+			.head {
+				background: url('../../imgs/services/bird.svg') no-repeat 0 0;
+				background-size: 80px 105px;
+				padding: 0 0 0 100px;
+			}
+			.button {
+				margin: auto auto 0 0;
+			}
+		}
+		.list {
+			ul {
+				li {
+					display: flex;
+					align-items: center;
+					letter-spacing: -0.4px;
+					padding: 15px 0 15px 35px;
+					background-size: 20px 20px;
+					background-position: 0 18px;
+					background-repeat: no-repeat;
+					border-bottom: 1px solid #f0f0f0;
+					line-height: 18px;
+					font-size: 15px;
+					&.i1 {
+						background-image: url('../../imgs/services/info.svg');
+					}
+					&.i2 {
+						background-image: url('../../imgs/services/like.svg');
+					}
+					&.i3 {
+						background-image: url('../../imgs/services/lecture.svg');
+					}
+					&:last-child {
+						padding-bottom: 0;
+						border: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.vk {
+		.image {
+			margin-bottom: 20px;
+			border-radius: 15px;
+			img {
+				width: 100%;
+				height: auto;
+				object-fit: cover;
+			}
+		}
+	}
+	.question {
+		.desc {
+			align-items: center;
+			background: url('../../imgs/rooi.svg') no-repeat 0 0;
+			background-size: 70px 70px;
+			padding: 0 0 0 85px;
+			line-height: 18px;
+			margin: 0 0 20px;
+			font-size: 14px;
+		}
+		.formbox .row-buttons {
+			flex-direction: column;
+			.button,
+			.messages {
+				margin: 10px 0 0;
+				width: 100%;
+			}
+		}
+	}
+
+	.mapp {
+		background: #fff url('../../imgs/services/mobile.png') no-repeat 0 100%;
+		min-height: 495px;
+		.list {
+			margin: 0 0 0 auto;
+			width: 330px;
+			li {
+				padding: 7px 0 7px 50px;
+				background-size: 40px 40px;
+				background-position: 0 8px;
+				background-repeat: no-repeat;
+				line-height: 19px;
+				font-size: 15px;
+				&.i1 {
+					background-image: url('../../imgs/services/mobile-paragraph-1.svg');
+				}
+				&.i2 {
+					background-image: url('../../imgs/services/mobile-paragraph-2.svg');
+				}
+				ul {
+					padding: 10px 0 0;
+					li {
+						position: relative;
+						padding: 2px 0 2px 30px;
+						font-size: 14px;
+						&::before {
+							position: absolute;
+							color: #ff6b00;
+							font-size: 14px;
+							content: '✓';
+							left: 0;
+						}
+					}
+				}
+			}
+			.download {
+				background: url('../../imgs/qr-code.png') no-repeat 0 0;
+				background-size: 110px 110px;
+				margin: 25px 0 20px;
+				.links {
+					width: 140px;
+					height: 110px;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					margin: 0 0 15px auto;
+					a {
+						width: 140px;
+						height: 42px;
+						background-position: 0 0;
+						background-repeat: no-repeat;
+						background-size: cover;
+						&.google {
+							background-image: url('../../imgs/services/google.svg');
+						}
+						&.apple {
+							background-image: url('../../imgs/services/apple.svg');
+						}
+					}
+				}
+				p {
+					text-align: center;
+					line-height: 17px;
+					font-size: 14px;
+				}
+			}
+		}
+	}
+	.support {
+		.phone {
+			background: url('../../imgs/services/phone.svg') no-repeat 0 50%;
+			border-bottom: 1px solid #f0f0f0;
+			padding: 15px 0 15px 35px;
+			font-weight: 700;
+			font-size: 18px;
+			display: block;
+		}
+		.desc {
+			padding: 5px 0;
+		}
+	}
+
+	.medical-support {
+		box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+		border-top: 1px solid #f0f0f0;
+		background: #fff;
+		.column {
+			width: calc(50% - 18px);
+		}
+		.head {
+			background: url('../../imgs/services/medical-support-2.svg') no-repeat 0 0;
+			background-size: 80px 80px;
+			margin-bottom: 15px;
+			padding-left: 100px;
+		}
+
+		.regions {
+			.head {
+				background-size: 40px 40px;
+				background: url('../../imgs/services/info-sm.svg') no-repeat 20px 50%;
+				padding: 20px 20px 20px 70px;
+				border: 1px solid #ff6b00;
+				border-radius: 8px;
+				position: relative;
+			}
+			.content ol {
+				counter-reset: counter;
+				column-count: 2;
+				width: 100%;
+				li {
+					padding: 1px 20px 1px 50px;
+					position: relative;
+					font-size: 15px;
+					&::before {
+						content: counter(counter);
+						counter-increment: counter;
+						margin: 0 0 0 -30px;
+						text-align: right;
+						font-weight: 700;
+						color: #ec7e3b;
+						font-size: 14px;
+						width: 20px;
+						float: left;
+					}
+				}
+			}
+		}
+	}
+
+	.additionals {
+		border-top: 1px solid #f0f0f0;
+		.block {
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+			width: calc(25% - 16px);
+			.icon {
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+				background-size: cover;
+				margin: 0 auto 20px 0;
+				height: 55px;
+				width: 55px;
+				&.map {
+					background-image: url('../../imgs/services//add-map.svg');
+				}
+				&.control {
+					background-image: url('../../imgs/services/add-control.svg');
+				}
+			}
+			.title {
+				display: flex;
+				align-items: center;
+				min-height: 44px;
+			}
+			.button {
+				background-color: transparent;
+				border-color: #000;
+				color: #000;
+				&:hover {
+					border-color: #a0a0a0;
+					background: #cccccc;
+				}
+			}
+		}
+	}
+}

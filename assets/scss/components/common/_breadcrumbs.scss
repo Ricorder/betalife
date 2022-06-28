@@ -1,0 +1,23 @@
+.breadcrumbs {
+	box-shadow: 0 0 15px rgba(139, 155, 181, 0.1);
+	border-bottom: 1px solid #e5e5e5;
+	background: #fdfdfd;
+	line-height: 20px;
+	font-size: 13px;
+	padding: 18px 0;
+	z-index: 10;
+	span.sep {
+		color: #616161;
+		font-size: 12px;
+		margin: 0 5px;
+	}
+	a {
+		font-size: 13px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.breadcrumbs {
+		padding: 15px 0;
+	}
+}

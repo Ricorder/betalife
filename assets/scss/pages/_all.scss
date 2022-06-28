@@ -1,0 +1,428 @@
+.rubric {
+	margin-bottom: 30px;
+	.cb-inner {
+		background: #fff url('../../imgs/bg/wiki.svg') no-repeat 20% 0;
+		padding: 40px;
+	}
+	.cb-title {
+		max-width: 570px;
+		height: 350px;
+		padding: 30px 0 30px 40px;
+		margin: 0;
+		vertical-align: middle;
+		display: table-cell;
+		h2 {
+			font-size: 30px;
+			line-height: 1.1;
+			font-weight: 700;
+			padding: 0;
+			margin: 0;
+			max-width: 100%;
+			&::after {
+				display: none;
+			}
+		}
+		.desc {
+			padding: 10px 0;
+		}
+	}
+	.desc-more,
+	.cb-title .desc {
+		line-height: 25px;
+	}
+
+	.desc-more {
+		border: 2px dashed #ec7e3b;
+		vertical-align: auto;
+		background: #fbfafa;
+		border-radius: 12px;
+		padding: 15px 25px;
+		margin: 40px 0 0;
+		height: auto;
+
+		ul {
+			margin: 10px 0 20px 20px;
+			padding: 0;
+			li {
+				padding: 8px 0 8px 26px;
+			}
+		}
+		ol {
+			margin: 10px 0 20px 30px;
+			counter-reset: counter;
+			li {
+				padding: 8px 0 8px 10px;
+				position: relative;
+				&::before {
+					content: counter(counter);
+					counter-increment: counter;
+					margin: 0 0 0 -30px;
+					text-align: right;
+					font-weight: 700;
+					color: #ec7e3b;
+					width: 18px;
+					float: left;
+				}
+			}
+		}
+		ol ul,
+		ul ul {
+			padding: 0;
+		}
+		ol ul li {
+			background-position: 0 14px;
+			padding-left: 20px;
+		}
+		ul li::before,
+		ol ul li::before {
+			display: inline-block;
+			margin: 0 0 0 -26px;
+			font-weight: 800;
+			color: #ec7e3b;
+			content: '\2713';
+			font-size: 18px;
+			width: 16px;
+		}
+		h3 {
+			font-size: 18px;
+			font-weight: 700;
+			padding: 15px 0;
+			margin: 0 0 15px;
+			text-transform: uppercase;
+			&::before {
+				background: #ec7e3b;
+				position: absolute;
+				height: 1px;
+				width: 40px;
+				bottom: 0;
+				left: 0;
+				content: '';
+			}
+		}
+	}
+
+	.illus {
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		position: absolute;
+		height: 430px;
+		width: 430px;
+		z-index: 100;
+		right: 40px;
+		top: 0;
+	}
+	&.r1_1 .illus {
+		background-image: url('../../imgs/illus/r1_1.svg');
+		right: 15px;
+		width: 480px;
+	}
+	&.r1_2 .illus {
+		background-image: url('../../imgs/illus/r1_2.svg');
+	}
+	&.r1_3 .illus {
+		background-image: url('../../imgs/illus/r1_3.svg');
+	}
+	&.r2_1 .illus {
+		background-image: url('../../imgs/illus/r2_1.svg');
+	}
+	&.r2_2 .illus {
+		background-image: url('../../imgs/illus/r2_2.svg');
+	}
+	&.r2_3 .illus {
+		background-image: url('../../imgs/illus/r2_3.svg');
+	}
+	&.r2_4 .illus {
+		background-image: url('../../imgs/illus/r2_4.svg');
+		background-position: 50% 100%;
+	}
+	&.r2_5 .illus {
+		background-image: url('../../imgs/illus/r2_5.svg');
+		background-position: 50% 100%;
+	}
+}
+
+/** 
+ * Patient Path 
+ * Инфографика | Как ставят диагноз
+ */
+.way {
+	padding: 15px 0;
+	.step {
+		padding: 15px 0;
+	}
+	.cbox {
+		width: 300px;
+		font-size: 18px;
+		line-height: 22px;
+		position: relative;
+		text-align: center;
+		&::after {
+			background: #ec7e3b url('../../imgs/icons/b-arrow-u.svg') no-repeat 50% 41px;
+			box-shadow: 0 5px 10px rgba(236, 126, 59, 0.2);
+			transform: translate(-50%, 0);
+			border-radius: 50%;
+			position: absolute;
+			cursor: pointer;
+			display: block;
+			bottom: -15px;
+			height: 60px;
+			content: '';
+			width: 60px;
+			z-index: 2;
+			left: 50%;
+		}
+		.cb-inner {
+			padding: 40px 30px 30px;
+			text-align: center;
+			height: 290px;
+		}
+		.cb-icon {
+			&::before {
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+				position: absolute;
+				border-radius: 50%;
+				height: 100%;
+				width: 100%;
+				right: 0;
+				left: 0;
+				top: 0;
+			}
+			&.w1::before {
+				background-image: url('../../imgs/icons/way-ic1.svg');
+			}
+			&.w2::before {
+				background-image: url('../../imgs/icons/way-ic2.svg');
+			}
+			&.w3::before {
+				background-image: url('../../imgs/icons/way-ic3.svg');
+			}
+			&.w4::before {
+				background-image: url('../../imgs/icons/way-ic4.svg');
+			}
+			&.w5::before {
+				background-image: url('../../imgs/icons/way-ic5.svg');
+			}
+		}
+		b,
+		strong {
+			font-weight: 500;
+			display: inline;
+		}
+	}
+	.items {
+		width: calc(100% - 300px);
+		&.c4 .item {
+			width: 25%;
+		}
+	}
+
+	.item,
+	.item::before,
+	.item .item-inner {
+		position: relative;
+		border-radius: 15px;
+	}
+	.item {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		line-height: 22px;
+		padding: 0 0 10px;
+		margin: 0 0 auto;
+		font-size: 17px;
+		z-index: 2;
+		width: 50%;
+		&::before {
+			border: 1px solid #eaeaea;
+			background: #fafafa;
+			position: absolute;
+			display: block;
+			content: '';
+			right: 20px;
+			left: 20px;
+			z-index: 1;
+			bottom: 0;
+			top: 10px;
+		}
+		&::after {
+			background: #fff url('../../imgs/icons/b-arrow-r.svg') no-repeat 50% 50%;
+			transform: translate(-50%, -10px);
+			border: 2px solid #f2f2f2;
+			border-radius: 50%;
+			position: absolute;
+			margin: -20px 0 0;
+			display: block;
+			height: 40px;
+			width: 40px;
+			content: '';
+			z-index: 4;
+			top: 50%;
+			left: 0;
+		}
+		&:first-child::after {
+			display: none;
+		}
+		p {
+			max-width: 360px;
+			margin: auto;
+		}
+		.item-inner {
+			display: flex;
+			text-align: center;
+			align-items: center;
+			border: 1px solid #f2f2f2;
+			position: relative;
+			background: #fff;
+			font-size: 15px;
+			padding: 20px;
+			height: 310px;
+			z-index: 3;
+		}
+		.item-info-btn {
+			background: #ec7e3b url('../../imgs/icons/icn-info.svg') no-repeat 50% 50%;
+			box-shadow: 0px 5px 10px rgba(236, 126, 59, 0.2);
+			transition: all 0.3s;
+			border-radius: 50%;
+			position: absolute;
+			cursor: pointer;
+			display: block;
+			height: 26px;
+			content: '';
+			width: 26px;
+			right: 20px;
+			opacity: 1;
+			z-index: 6;
+			top: 20px;
+		}
+	}
+
+	.items {
+		&.c2 .item p {
+			max-width: 320px;
+		}
+		&.c4 .item {
+			width: 25%;
+		}
+	}
+}
+
+.library {
+	h1 {
+		margin: 0 0 25px;
+	}
+	.row {
+		margin: 0 -10px;
+		.cbox {
+			margin: 30px 10px 50px;
+			.cb-inner {
+				background-position: 50% 50%;
+				height: 320px;
+				padding: 0;
+				border: 0;
+			}
+			.download {
+				width: 100%;
+				height: 100%;
+				display: block;
+				cursor: pointer;
+			}
+			.button {
+				margin-left: -100px;
+				position: absolute;
+				width: 200px;
+				left: 50%;
+			}
+		}
+		&.c2 .cbox {
+			width: calc(50% - 20px);
+			.cb-inner {
+				background-color: #fff;
+				background-size: contain;
+			}
+			.button {
+				border-color: #fff;
+				color: #fff;
+				bottom: -35px;
+			}
+		}
+		&.c3 .cbox {
+			width: calc(33.3333% - 20px);
+			.cb-inner {
+				background-color: #ee811c;
+				background-size: cover;
+			}
+			.button {
+				background: #fff;
+				color: #ff8900;
+				bottom: -28px;
+			}
+		}
+	}
+	.den-za-dnem .cb-inner {
+		background-image: url('../../imgs/library/den-za-dnem-x1.svg');
+	}
+	.pamatka-pacienta .cb-inner {
+		background-image: url('../../imgs/library/pamatka-pacienta-x1.svg');
+	}
+	.zsrs .cb-inner {
+		background-image: url('../../imgs/library/zsrs-x1.svg');
+	}
+	.dnevnik-pacienta .cb-inner {
+		background-image: url('../../imgs/library/dnevnik-pacienta.png');
+	}
+	.patient-calendar .cb-inner {
+		background-image: url('../../imgs/library/patient-calendar.png');
+	}
+
+	.teriflunomide .cb-inner {
+		background-image: url('../../imgs/library/teriflunomide-x1.svg');
+	}
+	.pamyatka-pacienta-terapiya-gla .cb-inner {
+		background-image: url('../../imgs/library/pamyatka-pacienta-terapiya-gla-x1.svg');
+	}
+	.pamyatka-pacienta-pitrs .cb-inner {
+		background-image: url('../../imgs/library/pamyatka-pacienta-pitrs-x1.svg');
+	}
+	.pamyatka-pacienta-rights .cb-inner {
+		background-image: url('../../imgs/library/patient-memo-rights-x1.svg');
+	}
+}
+
+.farmakonadzor {
+	.cb-inner {
+		padding: 20px 50px;
+		.cb-title {
+			background: url('../../imgs/icons/icon-place.svg') no-repeat 50% 50%;
+			background-size: 170px 170px;
+			margin: auto 50px auto 0;
+			flex-direction: column;
+			text-align: center;
+			width: 200px;
+			.cb-icon {
+				background: none;
+				margin: 0 auto 10px;
+				&::before {
+					background-image: url('../../imgs/icons/pharma.svg');
+				}
+			}
+			h1 {
+				text-transform: uppercase;
+				line-height: 24px;
+				font-size: 18px;
+			}
+			p {
+				line-height: 22px;
+				font-size: 18px;
+				padding: 25px 0;
+			}
+		}
+		.cb-content {
+			border-left: 2px dashed #e5e5e5;
+			width: calc(100% - 250px);
+			padding: 15px 0 15px 50px;
+			line-height: 24px;
+		}
+	}
+}

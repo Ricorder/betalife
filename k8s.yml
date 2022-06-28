@@ -1,0 +1,109 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dcmbetalife
+    version: '${CI_COMMIT_TAG:-$CI_COMMIT_SHORT_SHA}'
+    component: web
+  name: dcmbetalife-web
+spec:
+  revisionHistoryLimit: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dcmbetalife
+      component: web
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: dcmbetalife
+        component: web
+        version: '${CI_COMMIT_TAG:-$CI_COMMIT_SHORT_SHA}'
+    spec:
+      affinity:
+        podAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - dcmbetalife
+                topologyKey: kubernetes.io/hostname
+      imagePullSecrets:
+        - name: dcmbetalife-regcred
+      containers:
+        - image: ${CI_REGISTRY_IMAGE}:${CI_COMMIT_TAG:-$CI_COMMIT_SHORT_SHA}
+          imagePullPolicy: IfNotPresent
+          name: web
+          envFrom:
+            - configMapRef:
+                name: dcmbetalife-web-env
+          ports:
+            - containerPort: 3000
+              name: http
+              protocol: TCP
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: http
+              scheme: HTTP
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: http
+              scheme: HTTP
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 2
+              memory: 2Gi
+      restartPolicy: Always
+---
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: dcmbetalife-web
+  labels:
+    app: dcmbetalife
+    component: web
+spec:
+  ports:
+    - port: 3000
+      name: web
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    app: dcmbetalife
+    component: web
+---
+# API Config Map
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dcmbetalife-web-env
+data:
+  API: 'https://api.biocadless.com'
+  CLIENT_ID: ${CLIENT_ID}
+  CLIENT_SECRET: ${CLIENT_SECRET}
+  BIOCADLESS_YOUTUBE_API: ${BIOCADLESS_YOUTUBE_API}
+  BIOCADLESS_GOOGLE_MAP_API: ${BIOCADLESS_GOOGLE_MAP_API}

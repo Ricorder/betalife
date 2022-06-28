@@ -1,0 +1,189 @@
+.statuses {
+	border-bottom: 1px solid $grey;
+	background: #fdfdfd;
+	height: 91px;
+	z-index: 20;
+	padding: 0;
+
+	.toggle {
+		transition: all 0.3s ease;
+		border-bottom: 1px solid #fdfdfd;
+		position: relative;
+		line-height: 22px;
+		font-weight: 500;
+		cursor: pointer;
+		font-size: 18px;
+		padding: 15px;
+		display: none;
+		margin: 0;
+		&::after {
+			background: url('../../../imgs/icons/arrow-right.svg') no-repeat 100% 50%;
+			transition: all 0.3s ease;
+			position: absolute;
+			margin-top: -20px;
+			display: block;
+			content: '';
+			height: 40px;
+			width: 40px;
+			right: 20px;
+			top: 50%;
+		}
+		&.active {
+			background: #dd6c27;
+			color: #fff;
+			&::after {
+				background: url('../../../imgs/icons/arrow-right-w.svg') no-repeat 100% 50%;
+				transform: rotate(90deg);
+			}
+		}
+	}
+
+	ul {
+		flex-wrap: nowrap;
+		margin: 0 -10px;
+	}
+	li {
+		padding: 15px 10px;
+		width: 100%;
+		a {
+			display: flex;
+			transition: none;
+			flex-direction: column;
+			justify-content: center;
+			padding: 10px 20px 10px 65px;
+			border: 1px solid #fff;
+			border-radius: 5px;
+			position: relative;
+			line-height: 20px;
+			min-height: 62px;
+			font-size: 16px;
+			&::before {
+				transform: translate(0, -50%);
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+				background-size: cover;
+				height: 42px;
+				width: 42px;
+				left: 12px;
+				top: 50%;
+			}
+
+			// &:hover,&:active {background: #fff;border-color: #ddd;box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)}
+
+			&:hover,
+			&:active,
+			&.active {
+				transition: background border-color 0.3s ease;
+				color: #fff;
+				border-color: #ec7e3b;
+				background: linear-gradient(315deg, #ff8900 18.93%, #ff6b00 81.07%);
+				box-shadow: 0px 3px 5px rgba(255, 107, 0, 0.2);
+				&::before {
+					filter: invert(1);
+				}
+			}
+			&.s1::before {
+				background-image: url('../../../imgs/icons/statusbar-s1.svg');
+			}
+			&.s2::before {
+				background-image: url('../../../imgs/icons/statusbar-s2.svg');
+			}
+			&.s3::before {
+				background-image: url('../../../imgs/icons/statusbar-s3.svg');
+			}
+			&.s4::before {
+				background-image: url('../../../imgs/icons/statusbar-s4.svg');
+			}
+			&.s5::before {
+				background-image: url('../../../imgs/icons/statusbar-s5.svg');
+			}
+			&.s6::before {
+				background-image: url('../../../imgs/icons/statusbar-s6.svg');
+			}
+		}
+	}
+	&.active .toggle {
+		background: linear-gradient(90deg, #ec7e3b 0%, #ff9757 100%);
+		border-color: #dd6c27;
+		color: #fff;
+		&::after {
+			background: url('../../../imgs/icons/arrow-right-w.svg');
+			transform: rotate(90deg);
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.statuses {
+		background: #fafafa;
+		padding: 10px 0;
+		height: auto;
+		ul {
+			flex-wrap: wrap;
+		}
+		li {
+			width: 33.3333%;
+			padding: 10px;
+			a {
+				border: 1px solid #e5e5e5;
+				align-items: center;
+				background: #fff;
+				display: flex;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.statuses li a {
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.statuses {
+		padding:0;
+		.container-inner {
+			padding:0;
+		}
+		.toggle {
+			transition: background 0.3s ease-out;
+			font-size: 16px;
+			display: block;
+			margin:0;
+			&.active {
+				background: linear-gradient(270deg, #ff8900 0%, #ff6b00 100%);
+				border-bottom: 1px solid #ff8900;
+			}
+		}
+		ul {
+			margin:0;
+			display: none;
+			li {
+				padding:0;
+				width: 50%;
+				a {
+					border:0;
+					border-radius:0;
+					flex-direction: row;
+					justify-content: flex-start;
+					padding: 10px 15px 10px 75px;
+					border-bottom:1px solid #e5e5e5;
+				}
+				&:last-child a {
+					border-bottom-width:0;
+				}
+			}
+			&.active {
+				border-top: 1px solid #ff6b00;
+				display: flex;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 568px) {
+	.statuses ul li {
+		width: 100%;
+	}
+}
